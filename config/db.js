@@ -1,7 +1,6 @@
 const { default: mongoose } = require("mongoose");
 const env = require("./env");
 
-
 async function connectDB() {
     let mongoUri;
     if (env.isDevelopment) {
@@ -13,7 +12,7 @@ async function connectDB() {
         throw new Error("MONGO DB is missing")
     }
 
-    mongoose.set("strictQuery" = true);
+    mongoose.set("strictQuery", true);
 
     await mongoose.connect(mongoUri);
 
